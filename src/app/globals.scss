@@ -1,0 +1,62 @@
+@import "@/styles/colors";
+@import "@/styles/display";
+//@import "@/styles/sizes";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+:root {
+	font-size: 14pt;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body,
+main,
+div,
+section {
+	@include flex;
+}
+
+body {
+	background-image:
+		radial-gradient(ellipse at 0% 0%, #fbfdf4, transparent 50%),
+		radial-gradient(ellipse at 100% 100%, #dcf7e1, transparent 40%),
+		radial-gradient(ellipse at 0% 100%, #cff0f5, transparent 256px);
+
+	main {
+		flex-grow: 1;
+	}
+
+	footer {
+		padding: 24px;
+		padding-bottom: 8px;
+		font-size: 11pt;
+		color: $gray-400;
+
+		a {
+			color: $primary-color;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	button,
+	input {
+		outline: none;
+		border: none;
+		background-color: transparent;
+	}
+}

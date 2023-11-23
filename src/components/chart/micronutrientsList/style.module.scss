@@ -1,0 +1,44 @@
+@import "@/styles/colors";
+
+.micronutrientsList {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	h3 {
+		font-size: 10pt;
+	}
+
+	.micronutrientBar {
+		.data {
+			padding-right: 4px;
+
+			flex-direction: row;
+			align-items: baseline;
+			justify-content: space-between;
+			font-size: 9pt;
+
+			text-transform: capitalize;
+	
+			.amount {
+				font-size: 8pt;
+			}
+		}
+	
+		.bar {
+			width: 180px;
+			height: 6px;
+			background-color: $gray-200;
+			border-radius: 3px;
+			overflow: hidden;
+			
+			.fill {
+				height: 100%;
+				background-color: #85e051;
+				border-radius: 3px;
+
+				transition: width 250ms ease-out;
+			}
+		}
+	}
+}

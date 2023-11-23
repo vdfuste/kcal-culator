@@ -1,0 +1,118 @@
+@import "@/styles/colors";
+
+.chart {
+	align-items: center;
+	gap: 32px;
+
+	/*.circle {
+		$size: 320px;
+		$carbsColor: #fcba64;
+		$proteinColor: #f15a5a;
+		$fatColor: #76ee94;
+
+		width: $size;
+		height: $size;
+
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 50%;
+		
+		.center {
+			width: 75%;
+			height: 75%;
+			border-radius: 50%;
+			background-color: white;
+		}
+	}*/
+
+	.circleWrapper {
+		$carbsColor: #fcba64;
+		$proteinColor: #f15a5a;
+		$fatColor: #76ee94;
+
+		display: grid;
+		grid-template-areas: "stack";
+		place-items: center;
+
+		.circle {
+			grid-area: stack;
+			$strokeWidth: 56px;
+			stroke-dashoffset: 180;
+	
+			* {
+				transition: all 500ms ease-in-out;
+			}
+	
+			.carbs {
+				stroke: $carbsColor;
+				stroke-width: $strokeWidth;
+			}
+	
+			.protein {
+				stroke: $proteinColor;
+				stroke-width: $strokeWidth;
+			}
+	
+			.fat {
+				stroke: $fatColor;
+				stroke-width: $strokeWidth;
+			}
+		}
+		
+		.center {
+			width: 70%;
+			height: 70%;
+
+			align-items: center;
+			justify-content: center;
+			grid-area: stack;
+
+			background-color: white;
+			border-radius: 100%;
+
+			.kcal {
+				font-size: 20pt;
+			}
+
+			.nutrients {
+				margin-top: 8px;
+				gap: 4px;
+
+				.nutrient {
+					flex-direction: row;
+					align-items: baseline;
+					gap: 2px;
+					font-size: 10pt;
+			
+					.color {
+						width: 12px;
+						height: 12px;
+						border-radius: 4px;
+			
+						&.carbs {
+							background-color: $carbsColor;
+						}
+			
+						&.protein {
+							background-color: $proteinColor;
+						}
+			
+						&.fat {
+							background-color: $fatColor;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nutrientsLists {
+		flex-direction: row;
+		gap: 16px;
+
+		.column {
+			justify-content: space-between;
+		}
+	}
+}
